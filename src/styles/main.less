@@ -18,10 +18,18 @@ body {
     color: #colors[textColor];
 }
 
+li {
+    list-style: none;
+}
+
 .container {
     max-width: 960px;
     width: 100%;
     margin: 0 auto;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
     @media @breakpointMobile{
         max-width: 70%;
@@ -32,13 +40,16 @@ body {
 }
 
 header {
-    padding: 24px;
+    padding-bottom: 24px;
 
     .profile-avatar {
         display: block;
         margin: 0 auto 24px;
         border-radius: 50%;
-    }    
+        height: 280px;
+        width: 280px;
+        object-fit: cover;
+        }  
 }
 
 .profile-bio {
@@ -67,14 +78,35 @@ header {
     width: 100%;
     margin: 0 auto;
 
-    li {
-        list-style: none;
-
         img {
             transition: all ease .3s;
 
             &:hover {
                 transform: scale(1.3);
+            }
+        }
+}
+
+.project-list {
+    margin-top: 32px;
+    &-item {
+        a {
+            text-decoration: none;
+            background-color: #colors[buttonColor];
+            display: block;
+            padding: 16px 20px;
+            margin-bottom: 16px;
+            text-align: center;
+            color: #colors[textColor];
+            font-weight: bold;
+            border: 2px solid  #colors[buttonColor];
+            border-radius: 30px;
+
+            &:hover {
+                color: #colors[buttonColor];
+                background-color: transparent;
+                transition: all ease .5s;
+                transform: scale(1.05);
             }
         }
     }
